@@ -55,3 +55,5 @@ $icon = $resultsDark['currently']['icon'];
 
 <p>Today temp is: <?= $temperature ?>&deg;C</p>
 <p>Summary: <?= $daily ?></p>
+
+
