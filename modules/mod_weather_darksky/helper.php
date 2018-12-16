@@ -27,14 +27,26 @@ class ModHelloWorldHelper
         $db = JFactory::getDbo();
 // Retrieve the shout
         $query = $db->getQuery(true)
-            ->select($db->quoteName('hello'))
-            ->from($db->quoteName('#__weather_darksky'))
-            ->where('lang = ' . $db->Quote('en-GB'));
-// Prepare the query
+            ->select('darkskyAPI, lat, longitude')
+            ->from($db->quoteName('#__weather_darksky'));
+        //  ->where('darkskyAPI = ' . $db->Quote('en-GB'));
+// //Prepare the query
         $db->setQuery($query);
 // Load the row.
-        $result = $db->loadResult();
-// Return the Hello
+        // $result = $db->loadResult();
+        $result = $db->loadAssoc();
         return $result;
+
     }
+
+
+    public static function getData(&$params)
+    {
+        $APIParams = array();
+        $APIParams['API_link'] = $params->get('API_link');
+       // $APIParams['Lat_link'] = $params->get('Lat_link');
+      //  $APIParams['Long_link'] = $params->get('Long_link');
+        return $APIParams;
+    }
+
 }
