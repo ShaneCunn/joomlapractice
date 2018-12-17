@@ -17,15 +17,14 @@
         <filename>sql/mysql/install.mysql.utf8.sql</filename>
         <filename>sql/mysql/uninstall.mysql.utf8.sql</filename>
     </files>
-
     <config>
         <fields name="params">
             <fieldset name="basic">
                 <field name="API_link" type="text" default="" label="API key" description="API Link" size="60"/>
+                <field name="google_link" type="text" default="" label="Google API key" description="long" size="60"/>
                 <field name="Lat_link" type="text" default="" label="Latitude" description="lat" size="60"/>
                 <field name="Long_link" type="text" default="" label="Longitude" description="long" size="60"/>
             </fieldset>
-
         </fields>
         <install>
             <sql>

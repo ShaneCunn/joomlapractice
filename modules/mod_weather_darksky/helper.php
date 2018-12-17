@@ -44,6 +44,7 @@ class ModHelloWorldHelper
     {
         $APIParams = array();
         $APIParams['API_link'] = $params->get('API_link');
+        $APIParams['google_link'] = $params->get('google_link');
        // $APIParams['Lat_link'] = $params->get('Lat_link');
       //  $APIParams['Long_link'] = $params->get('Long_link');
         return $APIParams;

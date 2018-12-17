@@ -24,14 +24,15 @@ $doc = JFactory::getDocument();
 $hello = modHelloWorldHelper::getHello($params);
 
 $API = modHelloWorldHelper::getData($params);
-
+$apiKey = $API['google_link'];
 $js = <<<JS
 jQuery(document).ready(function($){
   console.log( "document loaded" );
   
-  var GOOGLE_MAP_KEY = 'AIzaSyCGM6lUddZmL-LikAHdaaNtWQ5LhrSXRu8';
+ 
+  var GOOGLE_MAP_KEY = '$apiKey';
   function ipLookUp () {
-  $.ajax('http://ip-api.com/json')
+  $.ajax('https://ip-api.com/json')
   .then(
       function success(response) {
           console.log('User\'s Location Data is ', response);
@@ -88,22 +89,6 @@ if ("geolocation" in navigator) {
 });
        
  
-/*
-   
-function getLocation() {
-      var x = document.getElementById("demo");
-        if (navigator.geolocation) {
-            navigator.geolocation.getCurrentPosition(showPosition);
-        } else {
-            x.innerHTML = "Geolocation is not supported by this browser.";
-            console.log("not working")
-        }
-    }
-
-    function showPosition(position) {
-        x.innerHTML = "Latitude: " + position.coords.latitude +
-            "<br>Longitude: " + position.coords.longitude;
-    }*/
 
 JS;
 

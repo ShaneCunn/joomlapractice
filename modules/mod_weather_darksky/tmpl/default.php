@@ -14,6 +14,7 @@ $ip = null;
 // Darkskies api Key
 //$appID = "2457a1a06421272ba3217d68bf4f47fa";
 $appID = $API['API_link'];
+$GoogleKey = $API['google_link'];
 $lat = 53.270962;
 $long = -9.062691;
 
@@ -55,5 +56,6 @@ $icon = $resultsDark['currently']['icon'];
 
 <p>Today temp is: <?= $temperature ?>&deg;C</p>
 <p>Summary: <?= $daily ?></p>
+<p>Google key2: <?= $GoogleKey ?></p>
 
 
